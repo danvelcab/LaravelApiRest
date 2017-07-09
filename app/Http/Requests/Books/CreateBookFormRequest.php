@@ -26,10 +26,10 @@ class CreateBookFormRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            "title"                  =>      "required|string|min:1|max:100",
+            "title"                  =>      "required|string|min:5|max:100",
             "price"                  =>      "required|numeric|min:0|max:100",
-            "author"                 =>      "required|string|min:1|max:100",
-            "editor"                 =>      "required|string|min:1|max:100"
+            "author"                 =>      "required|string|min:5|max:100",
+            "editor"                 =>      "required|string|min:5|max:100"
         ];
 
         return $rules;
