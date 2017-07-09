@@ -26,10 +26,10 @@ class EditionBookFormRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            "title"                  =>      "required|string|max:100",
-            "price"                  =>      "required|number|min:0",
-            "author"                  =>      "required|string|max:100",
-            "editor"                =>       "required|string|max:100"
+            "title"                  =>      "required|string|min:1|max:100",
+            "price"                  =>      "required|number|min:0|max:100",
+            "author"                 =>      "required|string|min:1|max:100",
+            "editor"                 =>      "required|string|min:1|max:100"
         ];
 
         return $rules;
