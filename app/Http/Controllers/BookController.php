@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Routing\ResponseFactory;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use App\Http\Requests\Books\CreateBookFormRequest;
+use App\Http\Requests\Books\EditionBookFormRequest;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use App\Book;
 
@@ -38,7 +37,7 @@ class BookController extends Controller
 
     }
 
-    public function store(Request $request)
+    public function store(CreateBookFormRequest $request)
     {
         $book = new Book;
         $book->title = $request->input('title');
@@ -53,7 +52,7 @@ class BookController extends Controller
         throw new HttpException(400, "Invalid data");
     }
 
-    public function update(Request $request, $id)
+    public function update(EditionBookFormRequest $request, $id)
     {
         if (!$id) {
             throw new HttpException(400, "Invalid id");
